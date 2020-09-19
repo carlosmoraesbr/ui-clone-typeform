@@ -1,25 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import GlobalStyles from './styles/global';
+import * as styles from './styles';
+
+import Header from './components/Header';
+import FirstAndSecond from './components/FirstAndSecond';
 
 function App() {
+  React.useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyles />
+
+      <Header />
+
+      <styles.Main style={{ height: '1610vh' }}>
+        <styles.Section style={{ height: '72.7%' }}>
+          <FirstAndSecond />
+        </styles.Section>
+
+        <styles.Section style={{ height: '9.7%' }}>
+          <styles.Sticky className="third" />
+        </styles.Section>
+
+        <styles.Section style={{ height: '10.1%' }}>
+          <styles.Sticky className="fourth" />
+        </styles.Section>
+      </styles.Main>
+    </>
   );
 }
 
