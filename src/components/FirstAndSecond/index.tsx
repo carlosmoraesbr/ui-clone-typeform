@@ -51,7 +51,7 @@ const First: React.FC = () => {
   const leftSideHeight = useTransform(
     scrollYProgress,
     [0, 0.058],
-    ['20vh', '100vh']
+    ['14vh', '100vh']
   );
 
   const rightSideScale = useTransform(
@@ -63,7 +63,7 @@ const First: React.FC = () => {
   const rightSideY = useTransform(
     scrollYProgress,
     [0.047, 0.093],
-    ['58vh', '0vh']
+    ['80vh', '0vh']
   );
 
   const offsetY = useTransform(
